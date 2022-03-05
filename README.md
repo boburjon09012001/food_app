@@ -1,6 +1,5 @@
 # main_page_app
+Bu proekt rasmlari
 
-A new Flutter project.
-
-![](assets/screens/head7.png)
+![](assets/screens/head1.png)
 
