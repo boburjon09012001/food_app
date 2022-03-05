@@ -1,8 +1,6 @@
 # main_page_app
 
-A new Flutter project.
-
-## Getting Started
+Bu proekt rasmlar
 
 ![](assets/screens/head1.png)
  ![](assets/screens/head2.png)
