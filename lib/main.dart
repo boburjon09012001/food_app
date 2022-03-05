@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:main_page_app/pages/first_page.dart';
-
-
 void main(){
   runApp(MyApp());
 }
-
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -17,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           fontFamily: 'mont',
       ),
-      home: FirstPage(),
+      home:const FirstPage(),
     );
   }
 }

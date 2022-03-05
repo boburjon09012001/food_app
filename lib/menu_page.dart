@@ -4,7 +4,6 @@ import "package:curved_navigation_bar/curved_navigation_bar.dart";
 
 import 'package:main_page_app/pages/recipe_for1.dart';
 
-
 class MenuPage extends StatefulWidget {
   MenuPage({Key? key}) : super(key: key);
 
@@ -29,7 +28,7 @@ class _MenuPageState extends State<MenuPage> {
           child: Scaffold(
             bottomNavigationBar: CurvedNavigationBar(
               backgroundColor: Colors.blueAccent,
-              items: <Widget>[
+              items:const <Widget>[
                 Icon(Icons.home_outlined, size: 30),
                 Icon(Icons.favorite_outline, size: 30),
                 Icon(Icons.local_grocery_store_outlined, size: 30),
@@ -50,7 +49,7 @@ class _MenuPageState extends State<MenuPage> {
                     myCard(),
                     Container(
                       margin:
-                          EdgeInsets.only(top: 101.0, left: 14.0, right: 14.0),
+                       const   EdgeInsets.only(top: 101.0, left: 14.0, right: 14.0),
                       height: 160.0,
                       child: Column(
                         children: <Widget>[
@@ -71,7 +70,7 @@ class _MenuPageState extends State<MenuPage> {
                           children: [
                             Container(
                               padding: EdgeInsets.fromLTRB(26, 86.0, 0.0, 0.0),
-                              child: Text(
+                              child:const Text(
                                 "Paket Cheese \nBurger komplit",
                                 style: TextStyle(
                                   fontSize: 21.0,
@@ -84,7 +83,7 @@ class _MenuPageState extends State<MenuPage> {
                                 padding: EdgeInsets.fromLTRB(0, 0.0, 0.0, 0.0),
                                 child: Container(
                                     height: 35.0,
-                                    margin: EdgeInsets.only(
+                                    margin:const EdgeInsets.only(
                                         left: 0.0, right: 0.0, top: 10.0),
                                     child: ElevatedButton(
                                       style: ButtonStyle(
@@ -97,7 +96,7 @@ class _MenuPageState extends State<MenuPage> {
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           50.0),
-                                                  side: BorderSide(
+                                                  side:const BorderSide(
                                                       color:
                                                           Colors.redAccent)))),
                                       onPressed: () {
@@ -107,7 +106,7 @@ class _MenuPageState extends State<MenuPage> {
                                                 builder: (context) =>
                                                     MenuPage()));
                                       },
-                                      child: Text(
+                                      child:const Text(
                                         "Order Now",
                                         style: TextStyle(
                                           fontFamily: 'mont',
@@ -126,7 +125,7 @@ class _MenuPageState extends State<MenuPage> {
                       height: 40.0,
                       margin: EdgeInsets.only(top: 261.0),
                       padding: EdgeInsets.only(left: 24.0),
-                      child: Text(
+                      child:const Text(
                         "Categories",
                         style: TextStyle(
                           fontSize: 24.0,
@@ -154,7 +153,7 @@ class _MenuPageState extends State<MenuPage> {
                       height: 40.0,
                       margin: EdgeInsets.only(top: 461.0),
                       padding: EdgeInsets.only(left: 24.0),
-                      child: Text(
+                      child:const Text(
                         "Popular Now",
                         style: TextStyle(
                           fontSize: 24.0,
@@ -169,8 +168,6 @@ class _MenuPageState extends State<MenuPage> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
-
-
                           Container(
                             margin: EdgeInsets.only(left: 8.0),
                             child: Card(
@@ -186,16 +183,14 @@ class _MenuPageState extends State<MenuPage> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Image.asset("assets/images/foodbig.png"),
-                                    Text("Beef Burger",
-                                      style: TextStyle(
-                                          fontSize: 19.0
-                                      ),
+                                    Text(
+                                      "Beef Burger",
+                                      style: TextStyle(fontSize: 19.0),
                                     ),
-                                    Text("Mcdi",
+                                    Text(
+                                      "Mcdi",
                                       style: TextStyle(
-                                          fontSize: 13.0,
-                                          color: Colors.grey
-                                      ),
+                                          fontSize: 13.0, color: Colors.grey),
                                     ),
                                     Text("Rp. 20.000"),
                                   ],
@@ -203,9 +198,6 @@ class _MenuPageState extends State<MenuPage> {
                               ),
                             ),
                           ),
-
-
-
 
                           Container(
                             margin: EdgeInsets.only(left: 8.0),
@@ -222,21 +214,54 @@ class _MenuPageState extends State<MenuPage> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                        child: Image.asset("assets/images/burgernew.png"),
+                                      child: Image.asset(
+                                          "assets/images/pizzame.png"),
                                       height: 110,
                                     ),
-                                    Text("Beef Burger",
-                                      style: TextStyle(
-                                          fontSize: 11.0
-                                      ),
+                                    Text(
+                                      "Pizza Fruit",
+                                      style: TextStyle(fontSize: 11.0),
                                     ),
-                                    Text("Mcdi",
+                                    Text(
+                                      "Pijja hut",
                                       style: TextStyle(
-                                          fontSize: 13.0,
-                                          color: Colors.grey
-                                      ),
+                                          fontSize: 13.0, color: Colors.grey),
                                     ),
-                                    Text("Rp. 20.000"),
+                                    Text("Rp. 40.000"),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 8.0),
+                            child: Card(
+                              elevation: 50,
+                              shadowColor: Colors.grey,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              child: SizedBox(
+                                width: 152.0,
+                                height: 195.0,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      child: Image.asset(
+                                          "assets/images/burgernew.png"),
+                                      height: 110,
+                                    ),
+                                    Text(
+                                      "Beef Burger",
+                                      style: TextStyle(fontSize: 11.0),
+                                    ),
+                                    Text(
+                                      "KFS",
+                                      style: TextStyle(
+                                          fontSize: 13.0, color: Colors.grey),
+                                    ),
+                                    Text("Rp. 37.000"),
                                   ],
                                 ),
                               ),
@@ -258,31 +283,25 @@ class _MenuPageState extends State<MenuPage> {
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Image.asset("assets/images/burger2.png"),
-                                    Text("Beef Burger",
-                                    style: TextStyle(
-                                      fontSize: 19.0
+                                    Image.asset("assets/images/burger2.png",
+                                    height: 100,
                                     ),
+                                    Text(
+                                      "Beef Burger",
+
+                                      style: TextStyle(fontSize: 19.0),
                                     ),
-                                    Text("Mcdi",
+                                    Text(
+                                      "Mcdi",
                                       style: TextStyle(
-                                          fontSize: 13.0,
-                                        color: Colors.grey
-                                      ),
+                                          fontSize: 13.0, color: Colors.grey),
                                     ),
-                                    Text("Rp. 20.000"),
+                                    Text("Rp. 15.900"),
                                   ],
                                 ),
                               ),
                             ),
                           ),
-
-
-
-
-
-
-
                         ],
                       ),
                     ),
@@ -290,7 +309,7 @@ class _MenuPageState extends State<MenuPage> {
                       height: 40.0,
                       margin: EdgeInsets.only(top: 751.0),
                       padding: EdgeInsets.only(left: 24.0),
-                      child: Text(
+                      child:const Text(
                         "Recommended",
                         style: TextStyle(
                           fontSize: 24.0,
@@ -304,58 +323,32 @@ class _MenuPageState extends State<MenuPage> {
 
 
                     Container(
-                      height: 190.0,
-                      margin: EdgeInsets.only(top: 800.0, bottom: 30.0),
-                      padding: EdgeInsets.only(left: 20.0),
+                      height: 195.0,
+                      margin:const EdgeInsets.only(top: 800.0, bottom: 30.0),
+                      padding:const EdgeInsets.only(left: 20.0),
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
-
-
                           Container(
                             margin: EdgeInsets.only(left: 8.0),
+
+                            height: 50,
                             child: Card(
 
+                              elevation: 60.0,
                               shadowColor: Colors.grey,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
                               child: SizedBox(
                                 width: 270.0,
-                                height: 153.0,
+                                height: 193.0,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Image.asset("assets/images/bnew.png"),
+                                     Image.asset("assets/images/nolavashback.png",
 
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-
-
-
-
-                          Container(
-                            margin: EdgeInsets.only(left: 8.0),
-                            child: Card(
-                              elevation: 50,
-                              shadowColor: Colors.grey,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              child: SizedBox(
-                                width: 270.0,
-                                height: 153.0,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      child: Image.asset("assets/images/lnew.png",
-                                      fit: BoxFit.cover,
-                                      ),
-                                      height: 110,
+                                       width: 190.0,
                                     ),
 
                                   ],
@@ -363,6 +356,78 @@ class _MenuPageState extends State<MenuPage> {
                               ),
                             ),
                           ),
+                          Container(
+                            margin: EdgeInsets.only(left: 8.0),
+                            child: Card(
+                              elevation: 60,
+                              shadowColor: Colors.grey,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              child: SizedBox(
+                                width: 270.0,
+                                height: 193.0,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      child: Image.asset(
+                                        "assets/images/noburgerback.png",
+                                        fit: BoxFit.cover,
+                                      ),
+                                      height: 110,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 8.0),
+                            child: Card(
+                              elevation: 60,
+                              shadowColor: Colors.grey,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              child: SizedBox(
+                                width: 270.0,
+                                height: 193.0,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset("assets/images/nopizzaback.png",
+                                    width: 210.0,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+
+                          Container(
+                            margin: EdgeInsets.only(left: 8.0),
+                            child: Card(
+                              color: Color(0xFfF7F7F7),
+                              elevation: 50,
+                              shadowColor: Colors.grey,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              child: SizedBox(
+                                width: 270.0,
+                                height: 193.0,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset("assets/images/nofastback.png"),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+
+
 
 
                           Container(
@@ -371,23 +436,22 @@ class _MenuPageState extends State<MenuPage> {
                               elevation: 50,
                               shadowColor: Colors.grey,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
+                                borderRadius: BorderRadius.circular(20.0),
                               ),
                               child: SizedBox(
                                 width: 270.0,
-                                height: 153.0,
+                                height: 193.0,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Image.asset("assets/images/pnew.png"),
-
+                                    Image.asset("assets/images/burgernew.png",
+                                    width: 170.0,
+                                    ),
                                   ],
                                 ),
                               ),
                             ),
                           ),
-
-
 
 
 
@@ -396,19 +460,6 @@ class _MenuPageState extends State<MenuPage> {
                         ],
                       ),
                     ),
-
-
-
-
-
-
-
-
-
-
-
-
-
                   ],
                 ),
               ],
@@ -428,7 +479,7 @@ class _MenuPageState extends State<MenuPage> {
         child: Row(
           children: [
             Container(
-              padding: EdgeInsets.only(bottom: 20.0, left: 24.0),
+              padding:const EdgeInsets.only(bottom: 20.0, left: 24.0),
               child: Image.asset(
                 "assets/images/burger1.png",
                 width: 40.0,
@@ -437,7 +488,7 @@ class _MenuPageState extends State<MenuPage> {
             ),
             Container(
               margin: EdgeInsets.only(left: 4.0),
-              child: Text(
+              child:const Text(
                 "NeedFood",
                 style: TextStyle(
                   fontWeight: FontWeight.normal,
@@ -445,7 +496,7 @@ class _MenuPageState extends State<MenuPage> {
                 ),
               ),
             ),
-            SizedBox(
+         const   SizedBox(
               width: 160.0,
             ),
             Card(
@@ -453,7 +504,7 @@ class _MenuPageState extends State<MenuPage> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(35.0),
               ),
-              child: SizedBox(
+              child:const SizedBox(
                 width: 44.0,
                 height: 44.0,
                 child: Icon(
