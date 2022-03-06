@@ -4,13 +4,22 @@ import 'package:flutter/material.dart';
 import 'menu_page.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  LoginPage({Key? key}) : super(key: key);
+
 
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool _isPasswordHidden = true;
+  final _controller = TextEditingController();
+  final formKey = GlobalKey<FormState>();
+  String username = "";
+  String password = "";
+
+
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -113,28 +122,81 @@ class _LoginPageState extends State<LoginPage> {
 
                   ),
 
-                  Container(
-                    margin: EdgeInsets.only(left: 29.0,right: 29.0,top: 31.0,bottom: 10.0),
-                    child:const TextField(
-                      textInputAction: TextInputAction.next,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
 
-                      ),
+
+                  Form(
+                    key: formKey,
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 29.0,right: 29.0,top: 31.0,bottom: 10.0),
+                          child: TextFormField(
+                            onSaved: (value){
+                              username = value!;
+                            },
+                            validator: (value){
+                              if(value!.isEmpty ) return "Your username is empty !";
+
+
+                            },
+                            textInputAction: TextInputAction.next,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: "Username",
+
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 29.0,right: 29.0,),
+                          child: TextFormField(
+                            onSaved: (value){
+                              password = value!;
+                            },
+                            validator: (value){
+                              if(value!.isEmpty ) return "Your password is empty !";
+                              else if(value.length < 8) return "Your password required 8-12 symbols !";
+
+                            },
+                            textInputAction: TextInputAction.next,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: "Enter your password",
+                              fillColor: Colors.blue,
+                              suffixIcon:IconButton(onPressed: (){
+
+                                setState(() {
+                                  _isPasswordHidden = !_isPasswordHidden;
+                                });
+
+                              }, icon: _isPasswordHidden ? const Icon(
+                                  Icons.visibility_off) : const Icon(Icons.visibility)
+                              ),
+                            ),
+                            obscureText: _isPasswordHidden,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(left: 29.0,right: 29.0,),
-                    child:const TextField(
-                      textInputAction: TextInputAction.next,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: "Enter your password",
-                        fillColor: Colors.blue,
 
-                      ),
-                    ),
-                  ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                   Container(
 
                     margin: EdgeInsets.only(left: 29.0,right: 29.0,top:14.0 ),
@@ -164,7 +226,20 @@ class _LoginPageState extends State<LoginPage> {
                             )
                         ),
                       onPressed: (){
-                               Navigator.push(context,MaterialPageRoute(builder: (context)=> MenuPage()));
+
+                          final isValid = formKey.currentState!.validate();
+                          if(isValid){
+                            formKey.currentState!.save();
+                            print("Username: $username");
+                            print("Password: $password");
+
+
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=> MenuPage()));
+                          }
+
+
+
+
                       },
                       child:const Text("Login",
                       style:const TextStyle(
